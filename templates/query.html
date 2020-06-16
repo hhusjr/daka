@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>自动健康打卡</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: solid 1px #888888;
+        }
+
+        td {
+            padding: 3px;
+            border: solid 1px #888888;
+        }
+    </style>
+</head>
+<body>
+<h1>自动健康打卡</h1>
+<h3><a href="/">回到主页</a></h3>
+<h2>用户信息：</h2>
+<table>
+    <thead>
+    <tr>
+        <th>属性</th>
+        <th>值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>学号</td>
+        <td>{{ task.user_name }}</td>
+    </tr>
+    <tr>
+        <td>注册时间</td>
+        <td>{{ task.created }}</td>
+    </tr>
+    <tr>
+        <td>最后打卡时间（仅记录使用自动打卡系统的最后打卡时间）</td>
+        <td>{{ task.daka_time }}</td>
+    </tr>
+    </tbody>
+</table>
+<h2>系统日志：</h2>
+<table>
+    <thead>
+    <tr>
+        <th>日志信息</th>
+        <th>时间戳</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for log in logs %}
+        <tr>
+            <td>{{ log.message }}</td>
+            <td>{{ log.created }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h3><a href="/">回到主页</a></h3>
+</body>
+</html>

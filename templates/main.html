@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>自动健康打卡</title>
+</head>
+<body>
+<h1>自动健康打卡</h1>
+<div style="color: #888; font-size: 13px;">
+    <p>介绍：输入完学号密码点击"注册自动打卡"即可每天晚上自动打卡。自动打卡时间可能会根据网络情况调整。</p>
+</div>
+<div style="color: red;">
+    {{ error }}
+</div>
+<h3>注册自动打卡</h3>
+<form action="/" method="post">
+    {% csrf_token %}
+    <p>
+        <label>
+            学号（和信息门户的一样）：
+            <input type="text" name="user_name">
+        </label>
+    </p>
+    <p>
+        <label>
+            密码（和信息门户的一样）：
+            <input type="password" name="password">
+        </label>
+    </p>
+    <input type="submit" value="注册自动打卡">
+</form>
+<h3>自动打卡记录查询</h3>
+<form action="/query" method="get">
+    <p>
+        <label>
+            学号（和信息门户的一样）：
+            <input type="text" name="user_name">
+        </label>
+    </p>
+    <input type="submit" value="查询自动打卡记录">
+</form>
+<h3><a href="/who">谁在用？</a></h3>
+<h4><a href="https://github.com/hhusjr/daka">源码</a></h4>
+</body>
+</html>

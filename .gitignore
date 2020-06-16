@@ -1,0 +1,4 @@
+settings.py
+celerybeat-schedule.db
+db.sqlite3
+venv

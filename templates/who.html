@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>自动健康打卡</title>
+</head>
+<body>
+<h1>自动健康打卡</h1>
+<h3><a href="/">回到主页</a></h3>
+<h2>使用者：</h2>
+{% for task in tasks %}
+    <p>{{ task.user_name }}</p>
+{% endfor %}
+<h3><a href="/">回到主页</a></h3>
+</body>
+</html>
